@@ -6,7 +6,15 @@ return {
     number = true, -- sets vim.opt.number
     spell = false, -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+    colorcolumn = "80",
+    scrolloff = 8,
     wrap = false, -- sets vim.opt.wrap
+    guicursor = "",
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+    expandtab = true,
+    completeopt = {"menuone", "noselect", "noinsert"}
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
