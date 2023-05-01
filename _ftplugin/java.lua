@@ -58,8 +58,30 @@ local config = {
    flags = {
        allow_incremental_sync = true,
    },
+   init_options = {
+       bundles = {
+          vim.fn.glob("/Users/isr413/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.45.0.jar", 1)
+       }
+   },
 }
+
+config['on_attach'] = function(client, bufnr)
+  -- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
+  -- you make during a debug session immediately.
+  -- Remove the option if you do not want that.
+  -- You can use the `JdtHotcodeReplace` command to trigger it manually
+  require('jdtls').setup_dap({ hotcodereplace = 'auto' })
+  require('jdtls.dap').setup_dap_main_class_configs()
+end
+
 require('jdtls').start_or_attach(config)
 
-vim.bo.shiftwidth = 2
-vim.bo.tabstop = 2
+local dap = require("dap")
+dap.defaults.fallback.external_terminal = {
+  command = '/opt/homebrew/bin/alacritty';
+  args = {'-e'};
+}
+dap.defaults.fallback.force_external_terminal = true
+
+vim.bo.shiftwidth = 4
+vim.bo.tabstop = 4
