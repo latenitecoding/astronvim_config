@@ -6,6 +6,15 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       -- ensure_installed = { "lua_ls" },
+      ensure_installed = {
+        "clangd",
+        "gopls",
+        "jdtls",
+        "lua_ls",
+        "pylsp",
+        "rust_analyzer",
+        "taplo"
+      }
     },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
