@@ -11,7 +11,7 @@ return {
   -- },
   "folke/tokyonight.nvim",
   -- Lualine
-  { "rebelot/heirline.nvim", enabled = false },
+  ["rebelot/heirline.nvim"] = { disable = true },
   {
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
