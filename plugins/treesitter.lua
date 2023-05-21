@@ -3,6 +3,7 @@ return {
   opts = {
     -- ensure_installed = { "lua" },
     ensure_installed = {
+      "bash",
       "c",
       "go",
       "lua",
