@@ -50,22 +50,25 @@ return {
   },
   -- Rust
   "simrat39/rust-tools.nvim",
-  "github/copilot.vim",
-  "zbirenbaum/copilot.lua",
-  {
-    "zbirenbaum/copilot-cmp",
-    dependencies = {
-      "github/copilot.vim",
-      "zbirenbaum/copilot.lua",
-    },
-    config = function ()
-      require('copilot').setup({
-        suggestion = {enabled = false},
-        panel = {enabled = false},
-      })
-      require("copilot_cmp").setup()
-    end
-  },
+  -- "github/copilot.vim",
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({})
+  --   end,
+  -- },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   config = function ()
+  --     require('copilot').setup({
+  --       suggestion = { enabled = false },
+  --       panel = { enabled = false },
+  --     })
+  --     require("copilot_cmp").setup()
+  --   end
+  -- },
   "hrsh7th/cmp-nvim-lua",
   "hrsh7th/cmp-nvim-lsp-signature-help",
   "hrsh7th/cmp-vsnip",
@@ -74,9 +77,7 @@ return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "github/copilot.vim",
-      "zbirenbaum/copilot.lua",
-      "zbirenbaum/copilot-cmp",
+      -- "zbirenbaum/copilot-cmp",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "hrsh7th/cmp-vsnip",
@@ -96,7 +97,13 @@ return {
           ["<C-n>"] = cmp.mapping.select_next_item(),
           -- Add tab support
           ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-          ["<Tab>"] = cmp.mapping.select_next_item(),
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+            else
+              fallback()
+            end
+          end),
           ["<C-S-f>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
@@ -109,7 +116,7 @@ return {
         -- Installed sources:
         sources = {
           { name = "path" }, -- file paths
-          { name = "copilot", priority = 1000 },
+          -- { name = "copilot", priority = 1000 },
           { name = "nvim_lsp", priority = 750, keyword_length = 3 }, -- from language server
           { name = "nvim_lsp_signature_help", priority = 750 }, -- display function signatures with current parameter emphasized
           { name = "nvim_lua", priority = 500, keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
