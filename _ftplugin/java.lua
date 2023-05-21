@@ -83,5 +83,7 @@ dap.defaults.fallback.external_terminal = {
 }
 dap.defaults.fallback.force_external_terminal = true
 
-vim.bo.shiftwidth = 4
-vim.bo.tabstop = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.colorcolumn = "100"
