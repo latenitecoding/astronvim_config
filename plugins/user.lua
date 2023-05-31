@@ -117,13 +117,13 @@ return {
         sources = {
           { name = "path" }, -- file paths
           -- { name = "copilot", priority = 1000 },
-          { name = "nvim_lsp", priority = 750, keyword_length = 3 }, -- from language server
-          { name = "nvim_lsp_signature_help", priority = 750 }, -- display function signatures with current parameter emphasized
-          { name = "nvim_lua", priority = 500, keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
-          { name = "buffer", priority = 500, keyword_length = 2 }, -- source current buffer
-          { name = "vsnip", priority = 250, keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
-          { name = "luasnip", priority = 250 },
-          { name = "calc", priority = 500 }, -- source for math calculation
+          { name = "nvim_lsp", keyword_length = 3 }, -- from language server
+          { name = "nvim_lsp_signature_help" }, -- display function signatures with current parameter emphasized
+          { name = "nvim_lua", keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
+          { name = "buffer", keyword_length = 2 }, -- source current buffer
+          { name = "vsnip", keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
+          { name = "luasnip" },
+          { name = "calc" }, -- source for math calculation
         },
         window = {
           completion = cmp.config.window.bordered(),
