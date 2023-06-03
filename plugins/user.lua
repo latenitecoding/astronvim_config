@@ -50,25 +50,23 @@ return {
   },
   -- Rust
   "simrat39/rust-tools.nvim",
-  -- "github/copilot.vim",
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("copilot").setup({})
-  --   end,
-  -- },
-  -- {
-  --   "zbirenbaum/copilot-cmp",
-  --   config = function ()
-  --     require('copilot').setup({
-  --       suggestion = { enabled = false },
-  --       panel = { enabled = false },
-  --     })
-  --     require("copilot_cmp").setup()
-  --   end
-  -- },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require('copilot').setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function ()
+      require("copilot_cmp").setup()
+    end
+  },
   "hrsh7th/cmp-nvim-lua",
   "hrsh7th/cmp-nvim-lsp-signature-help",
   "hrsh7th/cmp-vsnip",
@@ -77,13 +75,18 @@ return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      -- "zbirenbaum/copilot-cmp",
+      "zbirenbaum/copilot-cmp",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       "hrsh7th/cmp-vsnip",
       "hrsh7th/vim-vsnip",
     },
     config = function()
+      local has_words_before = function()
+        if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
+        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return col ~= 0 and vim.api.nvim_buf_get_text(0, line-1, 0, line-1, col, {})[1]:match("^%s*$") == nil
+      end
       local cmp = require"cmp"
       cmp.setup({
         -- Enable LSP snippets
@@ -98,7 +101,7 @@ return {
           -- Add tab support
           ["<S-Tab>"] = cmp.mapping.select_prev_item(),
           ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
+            if cmp.visible() and has_words_before() then
               cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
             else
               fallback()
@@ -116,7 +119,7 @@ return {
         -- Installed sources:
         sources = {
           { name = "path" }, -- file paths
-          -- { name = "copilot", priority = 1000 },
+          { name = "copilot" },
           { name = "nvim_lsp", keyword_length = 3 }, -- from language server
           { name = "nvim_lsp_signature_help" }, -- display function signatures with current parameter emphasized
           { name = "nvim_lua", keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
