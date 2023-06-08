@@ -31,6 +31,11 @@ return {
   "jghauser/follow-md-links.nvim",
   -- Java
   "mfussenegger/nvim-jdtls",
+  -- Julia
+  {
+    "jpalardy/vim-slime",
+    ft = "julia",
+  },
   -- Lean
   "nvim-treesitter/nvim-treesitter-textobjects",
   "andrewradev/switch.vim",
@@ -50,6 +55,7 @@ return {
   },
   -- Rust
   "simrat39/rust-tools.nvim",
+  -- Copilot
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -78,6 +84,7 @@ return {
       "zbirenbaum/copilot-cmp",
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-nvim-lsp-signature-help",
+      "kdheepak/cmp-latex-symbols",
       "hrsh7th/cmp-vsnip",
       "hrsh7th/vim-vsnip",
     },
@@ -123,6 +130,7 @@ return {
           { name = "nvim_lsp", keyword_length = 3 }, -- from language server
           { name = "nvim_lsp_signature_help" }, -- display function signatures with current parameter emphasized
           { name = "nvim_lua", keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
+          { name = "latex_symbols", keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
           { name = "buffer", keyword_length = 2 }, -- source current buffer
           { name = "vsnip", keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
           { name = "luasnip" },
