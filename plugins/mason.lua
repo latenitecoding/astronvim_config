@@ -7,14 +7,14 @@ return {
     opts = {
       -- ensure_installed = { "lua_ls" },
       ensure_installed = {
-        "bashls",
-        "clangd",
-        "gopls",
-        "jdtls",
-        "lua_ls",
-        "pylsp",
-        "rust_analyzer",
-        "taplo"
+        -- "bashls", -- bash
+        -- "clangd", -- c/c++
+        -- "gopls", -- go
+        -- "jdtls", -- java
+        -- "lua_ls", -- lua
+        -- "pylsp", -- python
+        -- "rust_analyzer", -- rust
+        -- "taplo" -- toml
       }
     },
   },
