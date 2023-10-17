@@ -9,7 +9,14 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
-  "folke/tokyonight.nvim",
+  -- Themes
+  -- "folke/tokyonight.nvim",
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   -- Lualine
   ["rebelot/heirline.nvim"] = { disable = true },
   {

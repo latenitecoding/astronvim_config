@@ -7,14 +7,21 @@ return {
     opts = {
       -- ensure_installed = { "lua_ls" },
       ensure_installed = {
-        -- "bashls", -- bash
-        -- "clangd", -- c/c++
-        -- "gopls", -- go
-        -- "jdtls", -- java
-        -- "lua_ls", -- lua
-        -- "pylsp", -- python
-        -- "rust_analyzer", -- rust
-        -- "taplo" -- toml
+        "bashls", -- bash
+        "clangd", -- c/c++
+        "gopls", -- go
+        "hls", -- haskell
+        "jdtls", -- java
+        "julials", -- julia
+        "lua_ls", -- lua
+        "ocamllsp", -- ocaml
+        "omnisharp", -- c#
+        "pylsp", -- python
+        "rust_analyzer", -- rust
+        "spectral", -- json, yaml
+        "taplo", -- toml
+        "tsserver", -- typescript
+        "zls" -- zig
       }
     },
   },

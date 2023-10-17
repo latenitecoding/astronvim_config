@@ -3,14 +3,23 @@ return {
   opts = {
     -- ensure_installed = { "lua" },
     ensure_installed = {
-      -- "bash",
-      -- "c",
-      -- "go",
-      -- "lua",
-      -- "java",
-      -- "python",
-      -- "rust",
-      -- "toml"
+      "bash",
+      "c",
+      "cpp",
+      "c_sharp",
+      "go",
+      "haskell",
+      "java",
+      "julia",
+      -- "lean", -- not available
+      "lua",
+      "ocaml",
+      "python",
+      "rust",
+      "toml",
+      "typescript",
+      "yaml",
+      "zig"
     }
   },
 }
