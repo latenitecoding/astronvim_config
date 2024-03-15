@@ -14,7 +14,7 @@ return {
         "jdtls", -- java
         "julials", -- julia
         "lua_ls", -- lua
-        "ocamllsp", -- ocaml
+        -- "ocamllsp", -- ocaml
         "omnisharp", -- c#
         "pylsp", -- python
         "rust_analyzer", -- rust
