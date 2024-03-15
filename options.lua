@@ -8,8 +8,6 @@ return {
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
     colorcolumn = "80,100,120",
     scrolloff = 8,
-    wrap = true, -- sets vim.opt.wrap
-    textwidth = 80,
     guicursor = "",
     tabstop = 4,
     softtabstop = 4,
