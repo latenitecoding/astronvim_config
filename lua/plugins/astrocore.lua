@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -32,11 +30,20 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
+        colorcolumn = "80,100,120",
+        scrolloff = 8,
+        guicursor = "",
+        tabstop = 4,
+        softtabstop = 4,
+        shiftwidth = 4,
+        expandtab = true,
+        completeopt = {"menuone", "noselect", "noinsert"}
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        zig_fmt_autosave = 0,
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -68,8 +75,77 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
+        ["<leader>bo"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        -- harpoon
+        ["<leader>m"] = { name = "Harpoons" },
+        ["<leader>ma"] = {
+          function()
+            require("harpoon.mark").add_file()
+          end,
+          desc = "Harpoon file"
+        },
+        ["<leader>md"] = {
+          function()
+            require("harpoon.mark").rm_file()
+          end,
+          desc = "Delete harpoon"
+        },
+        ["<leader>mf"] = {
+          function()
+            require("harpoon.ui").toggle_quick_menu()
+          end,
+          desc = "Check harpoons"
+        },
+        ["<leader>m1"] = {
+          function()
+            require("harpoon.ui").nav_file(1)
+          end,
+          desc = "Goto harpoon 1"
+        },
+        ["<leader>m2"] = {
+          function()
+            require("harpoon.ui").nav_file(2)
+          end,
+          desc = "Goto harpoon 2"
+        },
+        ["<leader>m3"] = {
+          function()
+            require("harpoon.ui").nav_file(3)
+          end,
+          desc = "Goto harpoon 3"
+        },
+        ["<leader>m4"] = {
+          function()
+            require("harpoon.ui").nav_file(4)
+          end,
+          desc = "Goto harpoon 4"
+        },
+        ["<leader>m5"] = {
+          function()
+            require("harpoon.ui").nav_file(5)
+          end,
+          desc = "Goto harpoon 5"
+        },
+        ["<leader>m6"] = {
+          function()
+            require("harpoon.ui").nav_file(6)
+          end,
+          desc = "Goto harpoon 6"
+        },
+        ["<leader>ml"] = {
+          function()
+            require("harpoon.ui").next_next()
+          end,
+          desc = "Next harpoon"
+        },
+        ["<leader>mh"] = {
+          function()
+            require("harpoon.ui").nav_prev()
+          end,
+          desc = "Prev harpoon"
+        },
       },
       t = {
         -- setting a mapping to false will disable it
