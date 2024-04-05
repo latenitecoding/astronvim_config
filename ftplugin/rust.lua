@@ -14,7 +14,7 @@ vim.keymap.set(
 
 vim.keymap.set(
   "n",
-  "<C-l>",
+  "<C-k>",
   function()
     vim.cmd.RustLsp { 'hover', 'actions' }
   end,
@@ -25,4 +25,4 @@ vim.opt.tabstop = 4
 
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.colorcolumn = "100"
+-- vim.opt.colorcolumn = "100"
