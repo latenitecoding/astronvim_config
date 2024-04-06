@@ -12,7 +12,6 @@ return {
         "lua_ls",
         -- add more arguments for adding more language servers
         "bashls",
-        "glow",
         "gopls",
         "jdtls",
         "pylsp",
