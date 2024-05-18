@@ -67,6 +67,7 @@ return {
       }
     end
   },
+
   -- Julia
   { "jpalardy/vim-slime", ft = { "julia" } },
 

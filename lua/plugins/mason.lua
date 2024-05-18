@@ -14,9 +14,12 @@ return {
         "bashls",
         "gopls",
         "jdtls",
+        "julials",
+        "ocamllsp",
         "pylsp",
         "rust_analyzer",
         "taplo",
+        "tsserver",
         "zls",
       })
     end,
@@ -42,6 +45,8 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "python",
         -- add more arguments for adding more debuggers
+        "go",
+        "java",
       })
     end,
   },

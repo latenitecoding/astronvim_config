@@ -27,7 +27,7 @@ return {
       opt = { -- vim.opt.<key>
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
-        spell = false, -- sets vim.opt.spell
+        spell = true, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
         -- colorcolumn = "80,100,120",
@@ -76,6 +76,7 @@ return {
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
         ["<leader>bo"] = { "<cmd>bnext<cr>", desc = "Next buffer" },
+        ["<leader>bp"] = { "<cmd>bprevious<cr>", desc = "Previous buffer" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
         -- harpoon
