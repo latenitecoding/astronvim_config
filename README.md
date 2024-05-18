@@ -24,7 +24,7 @@ You can also just clone this repository directly if you do not want to track you
 #### Clone the repository
 
 ```shell
-git clone https://github.com/latenitecoding/astronvim_config.git ~/.config/nvim
+git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
 ```
 
 #### Start Neovim
@@ -33,11 +33,3 @@ git clone https://github.com/latenitecoding/astronvim_config.git ~/.config/nvim
 nvim
 ```
 
-## Community Plugins and Themes
-- TokyoNight for theme
-- Harpoon for file navigation
-- Java support via nvim-jdtls
-- Lean support via nvim-treesitter-textobjects, switch.vim, and lean.vim
-- Rust support via rustaceanvim
-- Copilot via copilot.lua (have to configure nvim-cmp to include copilot)
-- Typically prefer lualine over heirline
