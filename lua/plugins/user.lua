@@ -13,7 +13,6 @@ return {
     priority = 1000,
     opts = {},
   },
-  { "rose-pine/neovim", name = "rose-pine" , opts = {} },
 
   -- Lualine
   ["rebelot/heirline.nvim"] = { disable = true },
@@ -38,45 +37,6 @@ return {
   -- Markdown
   { "ellisonleao/glow.nvim", ft = { "markdown" } },
   { "jghauser/follow-md-links.nvim", ft = { "markdown" } },
-
-  -- Pkl
-  { "https://github.com/apple/pkl-neovim.git" },
-
-  -- Lean
-  { "nvim-treesitter/nvim-treesitter-textobjects", ft = { "lean" } },
-  { "andrewradev/switch.vim", ft = { "lean" } },
-  {
-    "Julian/lean.nvim",
-    event = { "BufReadPre *.lean", "BufNewFile *.lean" },
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "nvim-lua/plenary.nvim",
-    },
-    opts = {
-      lsp = {
-        on_attach = require("astrolsp").on_attach,
-      },
-      mappings = true,
-    },
-    config = function()
-      require("lean").setup {
-        abbreviations = { builtin = true },
-        lsp = { on_attach = require("astrolsp").on_attach },
-        lsp3 = { on_attach = require("astrolsp").on_attach },
-        mappings = true,
-      }
-    end
-  },
-
-  -- Julia
-  { "jpalardy/vim-slime", ft = { "julia" } },
-
-  "andweeb/presence.nvim",
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
 
   -- == Examples of Overriding Plugins ==
 

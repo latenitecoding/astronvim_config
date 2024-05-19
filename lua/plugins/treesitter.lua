@@ -12,14 +12,7 @@ return {
       "bash",
       "go",
       "java",
-      "javascript",
-      "julia",
-      "ocaml",
-      "pkl",
       "python",
-      "ruby",
-      "rust",
-      "zig",
     })
   end,
 }
