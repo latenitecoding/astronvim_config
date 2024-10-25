@@ -21,7 +21,6 @@ return {
         "rust_analyzer",
         "solargraph",
         "taplo",
-        "tsserver",
         "zls",
       })
     end,

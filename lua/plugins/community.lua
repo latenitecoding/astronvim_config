@@ -1,6 +1,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.rust" },
   -- { import = "astrocommunity.completion.copilot-lua" },
   -- { -- further customize the options set by the community
@@ -22,7 +23,7 @@ return {
   {
     "m4xshen/smartcolumn.nvim",
     opts = {
-      colorcolumn = "120",
+      colorcolumn = "100",
       disabled_filetypes = { "help" },
     },
   },
