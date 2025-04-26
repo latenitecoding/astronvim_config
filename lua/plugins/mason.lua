@@ -12,6 +12,12 @@ return {
       ensure_installed = {
         -- install language servers
         "lua-language-server",
+        "bashls",
+        "gopls",
+        "jdtls",
+        "pylsp",
+        "rust_analyzer",
+        "zls",
 
         -- install formatters
         "stylua",
